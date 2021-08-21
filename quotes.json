@@ -1,0 +1,26 @@
+[
+    {
+        "quote": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand",
+        "author": "Martin Fowler"
+    },
+    {
+        "quote": "First, solve the problem. Then, write the code.",
+        "author": "John Johnson"
+    },
+     {
+        "quote": "Experience is the name everyone gives to their mistakes",
+        "author": " Coco Chanel"
+    },
+     {
+        "quote": "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code.",
+        "author": "Dan Salomon"
+    }, 
+    {
+        "quote": "Perfection is achieved not when there is nothing more to add, but rather when there is nothing more to take away.",
+        "author": "Antoine de Saint-Exupery"
+    }, 
+    {
+        "quote": "Optimism is an occupational hazard of programming: feedback is the treatment. ",
+        "author": "Kent Beck"
+    }
+]

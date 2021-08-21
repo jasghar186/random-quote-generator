@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            background-image: url(holo.jpg);
+            background-size: cover;
+            
+            background-position: center right;
+        }
+        .container{
+          
+            width: 60%;
+            margin: 0 20%;
+            padding: 30px ;
+            background-color: #b09e99;
+        }
+        .sub_container{
+            padding: 25px 17px;
+            background-color: #d8cfcc;
+        }
+        button{
+            display: block;
+            margin:15px auto;
+            border: none;
+            outline: none;
+            padding: 10px 15px;
+            background-color: #64b6ac;
+            color: white;
+            cursor: pointer;
+        }
+        blockquote{
+           font-size: 20px;
+            font-family: cursive;
+        }
+        span{
+            display: block;
+            text-align: right;
+            font-size: 12px;
+            color: rgb(52, 15, 216);
+            text-transform: uppercase;
+            margin: 30px 0;
+        }
+    </style>
+    <title>Random Quote Generator</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="sub_container">
+        <div class="gbtn">
+            <button onclick="pickrandom()">Generate Quote</button>
+        </div>
+        <div class="quote">
+            <blockquote id="blockquote">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod animi saepe commodi, aperiam nemo asperiores nobis distinctio provident cumque, corporis quas veritatis est? Libero perspiciatis ab debitis eum culpa numquam.
+            </blockquote>
+            <span id="author">
+                junaid asghar
+            </span>
+        </div>
+    </div>
+</div>
+
+    <script>
+        var blockquote = document.getElementById("blockquote") ;
+        var author = document.getElementById("author")
+        function pickrandom(){
+            var randnum = Math.floor(Math.random()*6) ;
+       
+           var x = new XMLHttpRequest() ;
+           x.onload = function(){
+             
+            blockquote.innerHTML = JSON.parse(this.responseText)[randnum].quote ;
+            author.innerHTML = JSON.parse(this.responseText)[randnum].author ;
+
+           }
+           x.open("GET","quotes.json") ;
+           x.send() ;
+           
+        }
+
+
+
+    </script>
+</body>
+</html>
